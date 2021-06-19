@@ -2,6 +2,7 @@ package com.asc.flight.controller;
 
 import com.asc.flight.entity.FlightDetails;
 import com.asc.flight.service.FlightService;
+import com.asc.flight.vo.FlightDetailsVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class FlightController {
     }
 
     @GetMapping("/find/{flightNumber}")
-    public FlightDetails findFlightByNumber(@PathVariable("flightNumber") Integer flightNumber) {
+    public FlightDetailsVO findFlightByNumber(@PathVariable("flightNumber") Integer flightNumber) {
         return flightService.findFlightByNumber(flightNumber);
     }
 }
